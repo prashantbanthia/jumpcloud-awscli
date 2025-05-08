@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jumpcloud-awscli"
-version = "0.1.2"
+version = "0.2.0"
 description = "JumpCloud AWS CLI Authentication with Device Trust"
 readme = "README.md"
 authors = [{name = "Prashant Banthia", email = "prashantbanthia98@gmail.com"}]

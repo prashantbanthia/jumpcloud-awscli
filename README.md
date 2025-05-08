@@ -41,17 +41,17 @@ The package will use ChromeDriver in one of these ways:
 
 ```bash
 # Authenticate with JumpCloud and update AWS credentials
-jumpcloud-aws --url "https://sso.jumpcloud.com/saml2/yourapp"
+jumpcloud-awscli login --url "https://sso.jumpcloud.com/saml2/yourapp"
 ```
 
 ### All Options
 
 ```bash
-jumpcloud-aws --url "https://sso.jumpcloud.com/saml2/yourapp" \
-              --profile "jumpcloud" \
-              --duration 43200 \
-              --region "us-west-2" \
-              --debug
+jumpcloud-awscli login --url "https://sso.jumpcloud.com/saml2/yourapp" \
+                 --profile "jumpcloud" \
+                 --duration 43200 \
+                 --region "us-west-2" \
+                 --debug
 ```
 
 ### Using Environment Variables
@@ -63,7 +63,17 @@ You can set the JumpCloud URL as an environment variable:
 export JUMPCLOUD_AWS_URL="https://sso.jumpcloud.com/saml2/yourapp"
 
 # Then you can run without the --url parameter
-jumpcloud-aws
+jumpcloud-awscli login
+```
+
+### Help Information
+
+```bash
+# Show help for all commands
+jumpcloud-awscli --help
+
+# Show help for the login command
+jumpcloud-awscli login --help
 ```
 
 ## How It Works
@@ -112,7 +122,7 @@ If you encounter issues with Chrome or ChromeDriver:
 For more detailed output, use the `--debug` flag:
 
 ```bash
-jumpcloud-aws --url "https://sso.jumpcloud.com/saml2/yourapp" --debug
+jumpcloud-awscli login --url "https://sso.jumpcloud.com/saml2/yourapp" --debug
 ```
 
 ### macOS SSL Certificate Issues
