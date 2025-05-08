@@ -171,4 +171,6 @@ cython_debug/
 .ruff_cache/
 
 # PyPI configuration file
+<<<<<<< HEAD
 .pypirc
+>>>>>>> 320d63e (First Commit.)
