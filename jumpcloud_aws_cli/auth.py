@@ -14,12 +14,8 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 from urllib.parse import urlparse, parse_qs
-import platform
-import subprocess
-import sys
 
 import boto3
-import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -38,7 +34,7 @@ class JumpCloudAWSAuth:
     SAML assertion extraction, AWS role selection, and credential generation.
     """
 
-    def __init__(self, jumpcloud_url, profile="default", duration=3600, region="us-east-2", debug=False):
+    def __init__(self, jumpcloud_url, profile="default", duration=3600, region="us-east-1", debug=False):
         """
         Initialize the authentication class with JumpCloud and AWS configuration.
 
@@ -83,8 +79,11 @@ class JumpCloudAWSAuth:
         chrome_options.add_argument("--disable-extensions")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--disable-infobars")
 
+        # Remove automation info bar
+        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        chrome_options.add_experimental_option('useAutomationExtension', False)
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
         # Add network interception to capture SAML requests
         chrome_options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})

@@ -5,4 +5,4 @@ This package provides utilities for authenticating with AWS CLI using JumpCloud 
 and Device Trust certificates.
 """
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
