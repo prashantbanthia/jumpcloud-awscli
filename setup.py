@@ -21,7 +21,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="jumpcloud-awscli",
-    version="0.1.1",
+    version="0.2.1-rc.1",
     author="Prashant Banthia",
     author_email="prashantbanthia98@gmail.com",
     description="JumpCloud AWS CLI Authentication with Device Trust",
@@ -33,7 +33,7 @@ setup(
     extras_require=extras,
     entry_points={
         "console_scripts": [
-            "jumpcloud-aws=jumpcloud_aws_cli.cli:main",
+            "jumpcloud-awscli=jumpcloud_aws_cli.cli:main",
         ],
     },
     classifiers=[
