@@ -40,7 +40,7 @@ def main():
     )
 
     # Check for default URL in environment
-    default_url = os.environ.get("JUMPCLOUD_AWS_URL", "")
+    default_url = os.environ.get("JUMPCLOUD_AWS_URL", "https://sso.jumpcloud.com/saml2/prodigal-aws")
 
     # Add arguments to the login command
     login_parser.add_argument(
@@ -56,13 +56,13 @@ def main():
     login_parser.add_argument(
         '--duration',
         type=int,
-        default=3600,
-        help='Session duration in seconds (default: 3600)'
+        default=43100,
+        help='Session duration in seconds (default: 43100)'
     )
     login_parser.add_argument(
         '--region',
-        default='us-east-1',
-        help='AWS region (default: us-east-1)'
+        default='us-east-2',
+        help='AWS region (default: us-east-2)'
     )
     login_parser.add_argument(
         '--debug',
